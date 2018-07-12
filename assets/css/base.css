@@ -1,0 +1,31 @@
+[v-cloak] {
+  display: none;
+}
+
+.w1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  min-height: 85vh;
+}
+
+.carousel {
+  height: 328px;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  background: url('~/assets/images/banner.jpg') no-repeat center top;
+}
+
+.banner-bg {
+   height: 328px;
+   text-align: center;
+   color: #fff;
+   background: url('~/assets/images/banner.jpg') no-repeat center top;
+ }
+
+.banner-bg.about-bg {
+  background: url('~/assets/images/banner-about.jpg') no-repeat center top;
+}
