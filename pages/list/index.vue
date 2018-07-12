@@ -8,7 +8,8 @@
   <section class="container">
     <div class="w1200">
       {{msg}}
-      <button @click="$store.commit('test/getList')">{{$store.state.test.list}}</button>
+      <button @click="$store.commit('INCREMENT')">{{$store.state.counter}}</button> {---}
+      <button @click="test()">getter{{getterTest}}</button>
       <a @click="getRoute()">首页</a>
     </div>
   </section>
@@ -19,13 +20,17 @@
   export default {
     data() {
       return {
-        msg: 'hello vue compoent!'
+        msg: 'hello vue compoent!',
+        getterTest: 0
       }
     },
     methods: {
       getRoute() {
         console.log('router --> index')
         this.$router.push('/')
+      },
+      test() {
+        this.getterTest = this.$store.getters.getAddCounter
       }
     }
   }

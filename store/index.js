@@ -1,17 +1,17 @@
-/**
- * author: dawangf.
- * createDate: 2018/7/6.
- * file: index.
- */
+import Vue from 'vue'
+import Vuex from 'vuex'
+import state from './state'
+import * as getters from './getters'
+import * as mutations from './mutations'
+import * as actions from './actions'
 
-import test from './test'
+Vue.use(Vuex)
 
-export const state = () => ({
-  counter: 0
+const store = () => new Vuex.Store({
+  state,
+  getters,
+  mutations,
+  actions
 })
 
-export const mutations = {
-  increment (state) {
-    state.counter++
-  }
-}
+export default store

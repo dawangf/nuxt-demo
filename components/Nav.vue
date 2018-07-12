@@ -32,11 +32,14 @@
         navList: []
       }
     },
-    async mounted() {
-      console.log('dddddddddddddsssssssssssssssss')
-      let {data} = await axios.get(`https://api.myjson.com/bins/11r7f6`)
-      console.log('菜单', {data}.data)
-      return this.navList = {data}.data
+    mounted() {
+      console.log('发起菜单请求前：')
+      this.$store.dispatch('apiNavs').then(res => {
+        console.log('ssssss', res)
+      })
+//      let {data} = await axios.get(`https://api.myjson.com/bins/11r7f6`)
+//      console.log('菜单', {data}.data)
+//      return this.navList = {data}.data
     }
   }
 </script>

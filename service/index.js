@@ -1,6 +1,6 @@
 import axios from 'axios'
 // import { Message } from 'element-ui'
-import qs from 'qs'
+// import qs from 'qs'
 import config from './config'
 
 if (process.server) {
@@ -12,7 +12,8 @@ const service = axios.create(config)
 // POST 传参序列化
 service.interceptors.request.use(
   config => {
-    if (config.method === 'post') config.data = qs.stringify(config.data)
+    // if (config.method === 'post') config.data = qs.stringify(config.data)
+    console.log('POST 传参序列化')
     return config
   },
   error => {
@@ -22,6 +23,7 @@ service.interceptors.request.use(
 // 返回状态判断
 service.interceptors.response.use(
   res => {
+    console.log('返回状态判断')
     return res.data
   },
   error => {
